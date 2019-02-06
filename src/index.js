@@ -7,9 +7,48 @@ const { subscribe, dispatch, getState } = createStore(reducer);
 // Here we pass the Redux state to our render method (defined globally in render.js)
 subscribe(() => render(getState()))
 
-// Dispatch the "INCREMENT" action every time the +1 button is pressed
-const incrementButton = document.getElementById('increment');
-incrementButton.addEventListener('click', e => dispatch({ type: "INCREMENT" }));
+const colorField = document.getElementById("color")
+colorField.addEventListener('change', e => {
+    dispatch({
+        type: "color",
+        color: e.target.value
+    })
+})
 
-const decrementButton = document.getElementById('decrement');
-decrementButton.addEventListener('click', e => dispatch({ type: "DECREMENT" }));
+const numberField = document.getElementById('number');
+numberField.addEventListener('change', e => {
+    dispatch({
+        type: "number",
+        number: parseInt(e.target.value)
+    });
+});
+
+// Dispatch the "INCREMENT" action every time the +1 button is pressed
+const incrementButtonPos5 = document.getElementById('increment+5');
+incrementButtonPos5.addEventListener('click', e => {
+    dispatch({ 
+        type: "INCREMENT+5",
+    });
+});
+
+const incrementButtonPos1 = document.getElementById('increment+1');
+incrementButtonPos1.addEventListener('click', e => {
+    dispatch({ 
+        type: "INCREMENT+1",
+    })
+});
+
+const decrementButtonNeg1 = document.getElementById('decrement-1');
+decrementButtonNeg1.addEventListener('click', e => {
+    dispatch({ 
+        type: "DECREMENT-1",
+    })
+});
+
+const decrementButtonNeg5 = document.getElementById('decrement-5');
+decrementButtonNeg5.addEventListener('click', e => {
+    dispatch({ 
+        type: "DECREMENT-5",
+    })
+});
+

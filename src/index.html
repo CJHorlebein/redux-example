@@ -8,9 +8,17 @@
 </head>
 <body>
     <div class="app">
-        <h1 id="counterValue">0</h1>
-        <button id="increment">+1</button>
-        <button id="decrement">-1</button>
+        <select id="color">
+            <option value="red">Red</option>
+            <option value="blue">Blue</option>
+            <option value="green">Green</option>
+        </select>
+        <input type="text" id="number" placeholder="Counter Value">
+        <h1 id="counterValue"><span style="color:red;">0</span></h1>
+        <button id="increment+5">+5</button>
+        <button id="increment+1">+1</button>
+        <button id="decrement-1">-1</button>
+        <button id="decrement-5">-5</button>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.0.1/redux.min.js"></script>
